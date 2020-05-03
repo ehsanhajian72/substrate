@@ -1,0 +1,11 @@
+---
+- name: Transfer and execute Substrate installation script.
+  hosts: 138.91.125.113
+  remote_user: ehsan
+  sudo: yes
+  tasks:
+     - name: Transfer the script
+       copy: src=substrate.sh dest=/home/ehsan mode=0777
+
+     - name: Execute the Substrate script
+       command: sh /home/ehsan/substrate.sh
